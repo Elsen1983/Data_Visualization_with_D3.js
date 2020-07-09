@@ -926,10 +926,10 @@ function lineChart(input) {
 function pieChart(input) {
   console.log(input);
 
-  let margin = {top: 30, right: 50, bottom: 30, left: 50};
+  let margin = {top: 30, right: 20, bottom: 30, left: 20};
 
   let height = 450 - margin.top - margin.bottom;
-  let width = 500 - margin.left - margin.right;
+  let width = 450 - margin.left - margin.right;
 
   let svg = d3.select('#resultDiv')
     .append('svg').attr('id', 'pieChart_svg')
@@ -943,7 +943,6 @@ function pieChart(input) {
 
   let color = d3.scaleOrdinal(['#47ACB1', '#F26522', '#004853', '#CDAB05', '#0a5aff', '#4D4D4F']);
 
-
   let pie = d3.pie()
     .sort(null)
     .value(function (d) {
@@ -954,7 +953,6 @@ function pieChart(input) {
     .outerRadius(radius)
     .innerRadius(0);
 
-
   let label = d3.arc()
     .outerRadius(radius - 20)
     .innerRadius(radius - 20);
@@ -962,8 +960,6 @@ function pieChart(input) {
   let labelTwo = d3.arc()
     .outerRadius(radius - 90)
     .innerRadius(radius - 90);
-
-  // var input = { domain1: 10, domain2: 3, domain3: 6, domain4: 8, domain5: 12, domain6: 13 };
 
   let data = Object.keys(input).map(function (d) {
     return {name: d, value: input[d]};
@@ -993,6 +989,7 @@ function pieChart(input) {
     .attr('font-size', '15px')
     .attr('font-family', 'sans-serif')
     .attr('text-anchor', 'middle')
+    .attr('font-weight', 'bold')
     .text(function (d) {
       if (d.data.value !== 0) {
         return d.data.name;
@@ -1006,7 +1003,8 @@ function pieChart(input) {
     })
     .attr("dy", "0.35em")
     .attr("font-family", "sans-serif")
-    .attr("font-size", "10px")
+    .attr("font-size", "12px")
+    .attr('font-weight', 'bold')
     .attr("fill", "#bce8f1")
     .attr('text-anchor', 'middle')
     .text(function (d) {
@@ -1068,7 +1066,7 @@ function treeMap(input) {
     .enter()
     .append("rect")
     .attr('x', function (d) {
-      return d.x0 ;
+      return d.x0;
     })
     .attr('y', function (d) {
       return d.y0 +30;
@@ -1080,6 +1078,7 @@ function treeMap(input) {
       return d.y1 - d.y0;
     })
     .style("stroke", "black")
+
     .style("fill", "#3d5de5");
 
   // and to add the text labels

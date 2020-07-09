@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -29,13 +29,12 @@
 </head>
 
 <body>
-<br>
-<!-- Add your site or application content here -->
+<div id="topArea"><h1>Interactive Data Visualization</h1></div>
+<hr>
 <div id="map_container">
   <svg id="mapSVG">
-
-    <g id="mainGroup" transform="scale(0.5)">
-      <animateTransform attributeName="transform" begin="0s" dur="1s" from="0.25 0.25" repeatCount="1" to="0.5 0.5"
+    <g id="mainGroup" transform="scale(0.55)">
+      <animateTransform attributeName="transform" begin="0s" dur="1.5s" from="0.15 0.15" repeatCount="1" to="0.55 0.55"
                         type="scale"></animateTransform>
       <g>
         <g class="region NI" id="NI">
@@ -221,94 +220,96 @@
     </g>
 
   </svg>
-  <div id="notMap">
-    <div id="dataPart">
-      <!--    <button onclick="selectedCounty(this.textContent)">Cork</button>-->
-      <!--    <button onclick="selectedCounty(this.textContent)">Carlow</button>-->
-      <div id="visualizationDiv">
-        <label for="visualizationType" id="visualizationTypeLabel">Select the type of visualization:</label>
-        <br>
-        <select id="visualizationType" name="visualizationType" onchange="selectVisualization(this);">
-          <option value="none">None</option>
-          <option value="datatable">Data Table</option>
-          <option value="choroplethmap">Tree Map</option>
-          <option value="linechart">Line Chart</option>
-          <option value="piechart">Pie Chart</option>
-          <option value="barchart">Bar Chart</option>
-        </select>
-      </div>
-      <div id="countyDiv">
-        <label for="countySelector" id="countySelectorLabel">Select county:</label>
-        <br>
-        <select id="countySelector" name="county" onchange="selectCounty(this);">
-          <option value="none">None</option>
-          <option value="all">All</option>
-          <option value="carlow">Carlow</option>
-          <option value="cavan">Cavan</option>
-          <option value="clare">Clare</option>
-          <option value="cork">Cork</option>
-          <option value="donegal">Donegal</option>
-          <option value="dublin">Dublin</option>
-          <option value="galway">Galway</option>
-          <option value="kerry">Kerry</option>
-          <option value="kildare">Kildare</option>
-          <option value="kilkenny">Kilkenny</option>
-          <option value="laois">Laois</option>
-          <option value="leitrim">Leitrim</option>
-          <option value="limerick">Limerick</option>
-          <option value="longford">Longford</option>
-          <option value="louth">Louth</option>
-          <option value="mayo">Mayo</option>
-          <option value="meath">Meath</option>
-          <option value="monaghan">Monaghan</option>
-          <option value="offaly">Offaly</option>
-          <option value="roscommon">Roscommon</option>
-          <option value="sligo">Sligo</option>
-          <option value="tipperary">Tipperary</option>
-          <option value="waterford">Waterford</option>
-          <option value="westmeath">Westmeath</option>
-          <option value="wexford">Wexford</option>
-          <option value="wicklow">Wicklow</option>
-        </select>
-      </div>
-<!--      <div id="crimeYearDiv" style="display:none">-->
-<!--        <label for="crimeYearSelector" id="crimeYearSelectorLabel">Select the year of crime:</label>-->
-<!--        <br>-->
-<!--        <select id="crimeYearSelector" name="county" onchange="selectCrimeYear(this);">-->
-<!--          <option value="none">None</option>-->
-<!--          <option value="all">All</option>-->
-<!--          <option value="2010">2010</option>-->
-<!--          <option value="2011">2011</option>-->
-<!--          <option value="2012">2012</option>-->
-<!--          <option value="2013">2013</option>-->
-<!--          <option value="2014">2014</option>-->
-<!--          <option value="2015">2015</option>-->
-<!--        </select>-->
-<!--      </div>-->
-      <div id="crimeDiv">
-        <label for="crimeSelector" id="crimeSelectorLabel">Select type of crime:</label>
-        <br>
-        <select id="crimeSelector" name="county" onchange="selectCrime(this);">
-          <option value="none">None</option>
-          <option value="AOTTMAHARO">Attempts or threats to murder, assaults, harassments and related offences</option>
-          <option value="BARO">Burglary and related offences</option>
-          <option value="CDO">Controlled drug offences</option>
-          <option value="DTPATTE">Damage to property and to the environment</option>
-          <option value="DONA">Dangerous or negligent acts</option>
-          <option value="FDARO">Fraud, deception and related offences</option>
-          <option value="KARO">Kidnapping and related offences</option>
-          <option value="OAGJPAOOC">Offences against government, justice procedures and organisation of crime</option>
-          <option value="POAOSCO">Public order and other social code offences</option>
-          <option value="REAHO">Robbery, extortion and hijacking offences</option>
-          <option value="TARO">Theft and related offences</option>
-          <option value="WAEO">Weapons and Explosives Offences</option>
-
-        </select>
-      </div>
+</div>
+<div id="notMap">
+  <div id="dataPart">
+    <!--    <button onclick="selectedCounty(this.textContent)">Cork</button>-->
+    <!--    <button onclick="selectedCounty(this.textContent)">Carlow</button>-->
+    <div id="visualizationDiv">
+      <label for="visualizationType" id="visualizationTypeLabel">Select the type of visualization:</label>
+      <br>
+      <select id="visualizationType" name="visualizationType" onchange="selectVisualization(this);">
+        <option value="none">None</option>
+        <option value="datatable">Data Table</option>
+        <option value="choroplethmap">Tree Map</option>
+        <option value="linechart">Line Chart</option>
+        <option value="piechart">Pie Chart</option>
+        <option value="barchart">Bar Chart</option>
+      </select>
     </div>
-    <br>
-    <div id="resultDiv"></div>
+    <div id="countyDiv">
+      <label for="countySelector" id="countySelectorLabel">Select county:</label>
+      <br>
+      <select id="countySelector" name="county" onchange="selectCounty(this);">
+        <option value="none">None</option>
+        <option value="all">All</option>
+        <option value="carlow">Carlow</option>
+        <option value="cavan">Cavan</option>
+        <option value="clare">Clare</option>
+        <option value="cork">Cork</option>
+        <option value="donegal">Donegal</option>
+        <option value="dublin">Dublin</option>
+        <option value="galway">Galway</option>
+        <option value="kerry">Kerry</option>
+        <option value="kildare">Kildare</option>
+        <option value="kilkenny">Kilkenny</option>
+        <option value="laois">Laois</option>
+        <option value="leitrim">Leitrim</option>
+        <option value="limerick">Limerick</option>
+        <option value="longford">Longford</option>
+        <option value="louth">Louth</option>
+        <option value="mayo">Mayo</option>
+        <option value="meath">Meath</option>
+        <option value="monaghan">Monaghan</option>
+        <option value="offaly">Offaly</option>
+        <option value="roscommon">Roscommon</option>
+        <option value="sligo">Sligo</option>
+        <option value="tipperary">Tipperary</option>
+        <option value="waterford">Waterford</option>
+        <option value="westmeath">Westmeath</option>
+        <option value="wexford">Wexford</option>
+        <option value="wicklow">Wicklow</option>
+      </select>
+    </div>
+    <div id="crimeDiv">
+      <label for="crimeSelector" id="crimeSelectorLabel">Select type of crime:</label>
+      <br>
+      <select id="crimeSelector" name="county" onchange="selectCrime(this);">
+        <option value="none">None</option>
+        <option value="AOTTMAHARO">Attempts or threats to murder, assaults, harassments and related offences</option>
+        <option value="BARO">Burglary and related offences</option>
+        <option value="CDO">Controlled drug offences</option>
+        <option value="DTPATTE">Damage to property and to the environment</option>
+        <option value="DONA">Dangerous or negligent acts</option>
+        <option value="FDARO">Fraud, deception and related offences</option>
+        <option value="KARO">Kidnapping and related offences</option>
+        <option value="OAGJPAOOC">Offences against government, justice procedures and organisation of crime</option>
+        <option value="POAOSCO">Public order and other social code offences</option>
+        <option value="REAHO">Robbery, extortion and hijacking offences</option>
+        <option value="TARO">Theft and related offences</option>
+        <option value="WAEO">Weapons and Explosives Offences</option>
+
+      </select>
+    </div>
   </div>
+  <br>
+  <div id="resultDiv"></div>
+  <div id="dataTableReview" class="reviewAreas">
+    <p class="examples_header">Data Table</p>
+    <p class="examples_text">A data table, or a spreadsheet, is an efficient format for comparative data analysis on categorical objects.
+      Usually, the items being compared are placed in a column, while the categorical objects are in the rows.
+      The quantitative value is then placed at the intersection of the row and column, called the cell. </p>
+    <img class="examplesImage" src="./img/datatableexample.png" alt="Data Table Example" style="border: 1px black solid">
+
+  </div>
+<!--  <div>Tree Map</div>-->
+<!--  <div>Line Chart</div>-->
+<!--  <div>Pie Chart</div>-->
+<!--  <div>Bar Chart</div>-->
+
+</div>
+<div id="bottomArea">
+  <hr>
 </div>
 
 

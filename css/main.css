@@ -139,25 +139,10 @@ textarea {
   width: auto;
 }
 
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-
 .invisible {
   visibility: hidden;
 }
 
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
 
 .clearfix::before,
 .clearfix::after {
@@ -261,7 +246,6 @@ textarea {
   }
 }
 
-
 /*-----------------------------------------------------------------*/
 /* style.css */
 
@@ -284,11 +268,6 @@ textarea {
   fill: #aaa;
   stroke: #aaa;
 }
-
-/*rect {*/
-/*  fill: none;*/
-/*  pointer-events: all;*/
-/*}*/
 
 /* Colors taken from colorbrewer2.org - blue */
 .b0-9 { fill:rgb(247,251,255); }
@@ -389,74 +368,72 @@ textarea {
 
 
 #mapSVG{
-  width: 40vw;
-  height: 80vh;
+  width: 45vw;
+  max-width: 50vw;
+  height: 60vh;
   float: left;
+  padding-top: 1em;
 }
 
 #dataPart{
   width: 30vw;
   padding: 2em;
-  border: 1px solid black;
+  border: 2px solid black;
+  max-height: 20vh;
+  max-width: fit-content;
+  background-color: rgba(175, 239, 248, 0.73);
+
 }
 label{
-  font-size: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 select{
-  width: 15vw;
-  font-size: 0.75rem;
+  width: 20vw;
+  font-size: 1rem;
 }
 select option{
-  font-size: 0.75rem;
+  font-size: 1rem;
 
 }
 
 table{
-  margin-top: 2rem;
+  /*margin-top: 2rem;*/
 }
 table, th, td {
-  border: 1px solid black;
+  border: 2px double black;
 }
 td, th {
   padding: 1px 4px;
 }
 
-#tableMain thead:first-child tr {
-  font-size: 0.8em;
-  font-weight: bold;
+
+#topArea{
+  text-align: center;
 }
-/*#countyDiv{*/
-/*  display: none;*/
-/*}*/
-/*#selectAllCounty{*/
-/*  display: none;*/
-/*}*/
-/*#crimeDiv{*/
-/*  display: none;*/
-/*}*/
-/*#crimeYearDiv{*/
-/*  display: none;*/
-/*}*/
-#notMap{
-  float: left;
+#tableMain{
+  margin: 2em;
 }
-#resultDiv{
-  /* width: 40vw; */
-  /*padding-left: 1em;*/
-  /*margin-top: 1em;*/
-  /*float: left;*/
+#tableMain tbody{
+  background-color: #E1EEF4;
+}
+#tableMain tbody tr:first-child{
+  color: white;
+  background-color: black;
 }
 
-/*----- Pie Chart ----- */
-/*.arc text {*/
-/*  font: 15px sans-serif;*/
-/*  text-anchor: middle;*/
-/*}*/
-/*#secondArc{*/
-/*  font: 10px sans-serif;*/
-/*  text-anchor: end;*/
-/*  color: white;*/
-/*}*/
+
+#notMap {
+  max-width: 50vw;
+  left: 35vw;
+  position: absolute;
+  border-left: 1px black solid;
+  padding-left: 1em;
+  padding-top: 1em;
+  max-height: 80vh;
+  height: 75vh;
+  overflow: hidden;
+}
 
 .arc path {
   stroke: #fff;
@@ -468,26 +445,72 @@ td, th {
   stroke: #ffab00;
   stroke-width: 3;
 }
-
 .overlay {
   fill: none;
   pointer-events: all;
 }
-
 /* Style the dots by assigning a fill and stroke */
 .dot {
   fill: #ffab00;
   stroke: #fff;
 }
-
 .focus circle {
   fill: none;
   stroke: steelblue;
 }
-
 body{
-  background-color: #9ae6ef;
+  /*background-color: rgba(154, 230, 239, 0.53);*/
+  background-color: rgba(200, 229, 208, 0.7);
+}
+/*Tree Map*/
+#treeMap_svg{
+  padding-left: 100px;
+}
+
+/*results Area*/
+#resultDiv{
+  border: 2px rgb(30, 140, 211) solid;
+  width: fit-content;
+  max-height: 50vh;
+  overflow: hidden;
+  background: rgb(188, 232, 241);
+}
+
+/*Examples*/
+.reviewAreas{
+  padding: 1em;
+  background-color: rgba(175, 239, 248, 0.73);
+  border: 2px rgb(30, 140, 211) solid;
+}
+.examplesImage{
+  max-width: 30vw;
+  max-height: 20vh;
+}
+
+.examples_header{
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.examples_text{
+  text-align: justify;
+}
+#dataTableReview{
+  /*display: none;*/
+  max-width: 40vw;
 }
 
 
+#topArea{
+  max-height: 15vh;
+}
+#bottomArea{
+  position: absolute;
+  bottom: 10vh;
+  width: 100vw;
+  max-height: 5vh;
+}
+
+hr{
+  border: 1px black solid;
+}
 
