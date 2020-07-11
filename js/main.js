@@ -129,6 +129,7 @@ function stopWorker() {
 
 //VISUALIZATION TYPE SELECTOR ONCHANGE
 function selectVisualization(visualization) {
+
   //get the selected visualization type
   visualizationType = visualization.options[visualization.selectedIndex].text;
   console.log("Visualization type selected: " + visualizationType);
@@ -141,12 +142,15 @@ function selectVisualization(visualization) {
   document.getElementById("countySelector").selectedIndex = "0";
   document.getElementById("crimeSelector").selectedIndex = "0";
 
+  //hide all review div
+  hideReviews();
+  //display the currently selected visualization type review
+  displayReview();
   //clear earlier results from the 'resultDiv'
   clearResultArea();
 
   //if visualization type is not 'None'
   if (visualizationType !== "None") {
-
     //set country selector to able
     document.getElementById("countySelector").disabled = false;
     document.getElementById("crimeSelector").disabled = true;
@@ -191,6 +195,7 @@ function selectCounty(countyName) {
       summarising(event.data.result);
       //set crime selector to able
       document.getElementById("crimeSelector").disabled = false;
+      hideReviews();
       clearResultArea();
     };
   }
@@ -200,6 +205,7 @@ function selectCounty(countyName) {
     document.getElementById("crimeSelector").disabled = true;
     //clear earlier results from the 'resultDiv'
     clearResultArea();
+    hideReviews();
   }
 }
 
@@ -586,25 +592,43 @@ function visualizationSelector() {
 
 function clearResultArea() {
   let resultArea = document.getElementById("resultDiv");
-  //if 'resultDiv' has child
-  // if (visualizationType !== 'Line Chart') {
-  //   if (resultArea.hasChildNodes()) {
-  //     //remove all the childNodes
-  //     while (resultArea.hasChildNodes()) {
-  //       resultArea.removeChild(resultArea.firstChild);
-  //     }
-  //   }
-  // } else {
-  //   console.log(county);
-  //   if (county === 'None') {
   if (resultArea.hasChildNodes()) {
     //remove all the childNodes
     while (resultArea.hasChildNodes()) {
       resultArea.removeChild(resultArea.firstChild);
     }
   }
-  // }
-  // }
+}
+
+function displayReview(){
+  switch (visualizationType) {
+    case "None":
+      document.getElementById("idvReview").style.display = "block";
+      break;
+    case "Data Table":
+      document.getElementById("dataTableReview").style.display = "block";
+      break;
+    case "Tree Map":
+      document.getElementById("treeMapReview").style.display = "block";
+      break;
+    case "Line Chart":
+      document.getElementById("lineChartReview").style.display = "block";
+      break;
+    case "Pie Chart":
+      document.getElementById("pieChartReview").style.display = "block";
+      break;
+    case "Bar Chart":
+      document.getElementById("barChartReview").style.display = "block";
+      break;
+  }
+}
+
+function hideReviews(){
+  let elements = document.getElementsByClassName("reviewAreas");
+  //console.log("Hide these: " + elements);
+  for (let i = 0; i < elements.length; i++) {
+    elements[i].style.display = "none";
+  }
 
 }
 

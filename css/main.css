@@ -490,15 +490,41 @@ body{
 .examples_header{
   font-weight: bold;
   font-size: 1.1rem;
+  margin: 0;
 }
 .examples_text{
   text-align: justify;
 }
-#dataTableReview{
+
+#idvReview{
   /*display: none;*/
   max-width: 40vw;
+  font-size: 14px;
 }
-
+#dataTableReview{
+  display: none;
+  max-width: 40vw;
+}
+#treeMapReview{
+  display: none;
+  max-width: 40vw;
+  font-size: 14px;
+}
+#lineChartReview{
+  display: none;
+  max-width: 40vw;
+  font-size: 14px;
+}
+#pieChartReview{
+  display: none;
+  max-width: 40vw;
+  font-size: 14px;
+}
+#barChartReview{
+  display: none;
+  max-width: 40vw;
+  font-size: 14px;
+}
 
 #topArea{
   max-height: 15vh;
